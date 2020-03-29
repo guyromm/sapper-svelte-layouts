@@ -11,17 +11,19 @@
  let cursegment;
  $: {
      cursegment = (segment || 'grid');
-     l('cursegment:',cursegment);     
+     //l('cursegment:',cursegment);     
     }
  const handleKey = (e) => {
      let pos = pagenames.indexOf(cursegment);
      let idx=0;
-     if (e.key==='n')
+     if (e.key==='ArrowRight')
 	 idx=pos+1;
-     else if (e.key==='p')
+     else if (e.key==='ArrowLeft')
 	 idx=pos-1;
-     else if (e.key==='h')
+     else if (e.key==='ArrowUp')
 	 idx=0;
+     else if (e.key==='ArrowDown')
+	 idx=pagenames.length-1;
      else
 	 idx=pos;
      if (idx>=pagenames.length) idx=0;
