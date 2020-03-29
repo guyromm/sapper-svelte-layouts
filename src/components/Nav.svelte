@@ -6,6 +6,7 @@
 		  'grid':{url:'grid'},
 		  'imposter':{url:'imposter'},
 		  'reel':{},
+		  'cover':{},
 		  blog:{
 		      attrs:{rel:'prefetch'}
 		  }};
