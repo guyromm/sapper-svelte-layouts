@@ -2,7 +2,9 @@
  export let segment;
  const navpages = {home:{url:'.'},
 		   about:{},
-		   'sidebar layout test':{url:'sidebar'},
+		  'sidebar':{url:'sidebar'},
+		  'grid':{url:'grid'},
+		  'imposter':{url:'imposter'},		  		  
 		  blog:{
 		      attrs:{rel:'prefetch'}
 		  }};
