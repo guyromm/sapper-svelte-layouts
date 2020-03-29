@@ -1,11 +1,39 @@
 <script>
+ import { goto } from '@sapper/app';
  import {Switcher,Box} from './layout';
  export let segment;
- const navpages = {'home (the grid)':{url:'.'}};
- for (const page of ['stack','box','bracket','cluster','sidebar','switcher','cover','frame','reel','imposter'])
+ const pagenames = ['grid','stack','box','bracket','cluster','sidebar','switcher','cover','frame','reel','imposter'];
+ const navpages = {}; // 'home (the grid)':{url:'/'}
+ const l = console.log;
+ for (const page of pagenames)
      navpages[page]={};
+ navpages.grid={url:'/'};
+ let cursegment;
+ $: {
+     cursegment = (segment || 'grid');
+     l('cursegment:',cursegment);     
+    }
+ const handleKey = (e) => {
+     let pos = pagenames.indexOf(cursegment);
+     let idx=0;
+     if (e.key==='n')
+	 idx=pos+1;
+     else if (e.key==='p')
+	 idx=pos-1;
+     else if (e.key==='h')
+	 idx=0; //pos*-1;
+     else
+	 idx=pos;
+     if (idx>=pagenames.length) idx=0;
+     else if (idx<0) idx=pagenames.length-1;
+     let nsegment=pagenames[idx];     
+     l(e,'pos',pos,'keyup',e.key,idx,cursegment,'=>',nsegment,nsegment===cursegment);
+     if (nsegment!==cursegment) goto(navpages[nsegment].url?
+				     navpages[nsegment].url:
+				     nsegment);
+     }
 </script>
-
+<svelte:window on:keyup={handleKey}/>
 <style>
 
 :global(a[target="_blank"], a[target="blank"]) {
@@ -49,11 +77,6 @@ color:red;
 		bottom: -1px;
 	}
 
-/*	a {
-		text-decoration: none;
-		padding: 1em 0.5em;
-		display: block;
-	}*/
     a span { color:white; } 
 </style>
 <nav>
@@ -61,7 +84,7 @@ color:red;
 	{#each Object.entries(navpages) as [label,opts]}
 	    <Box><a
 		     aria-current={((segment!==undefined && segment===opts.url) ||
-				segment===label ||
+				cursegment===label ||
 				(segment===undefined && opts.url==='.'))?"page":undefined}
 		   href={opts.url?opts.url:label}
 		   {...opts.attrs}
