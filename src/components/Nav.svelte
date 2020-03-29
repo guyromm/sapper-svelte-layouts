@@ -21,13 +21,13 @@
      else if (e.key==='p')
 	 idx=pos-1;
      else if (e.key==='h')
-	 idx=0; //pos*-1;
+	 idx=0;
      else
 	 idx=pos;
      if (idx>=pagenames.length) idx=0;
      else if (idx<0) idx=pagenames.length-1;
      let nsegment=pagenames[idx];     
-     l(e,'pos',pos,'keyup',e.key,idx,cursegment,'=>',nsegment,nsegment===cursegment);
+     //l(e,'pos',pos,'keyup',e.key,idx,cursegment,'=>',nsegment,nsegment===cursegment);
      if (nsegment!==cursegment) goto(navpages[nsegment].url?
 				     navpages[nsegment].url:
 				     nsegment);
