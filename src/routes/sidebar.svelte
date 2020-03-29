@@ -16,8 +16,8 @@
 	</ul>
     </div>
     <div slot='not-sidebar'>
-	<h4>in the center</h4>
-	<p>{li}
-	    </p>
+	<h4><a href="https://every-layout.dev/layouts/sidebar/" target='_blank'>the sidebar</a></h4>
+	<p>{li}</p>
+	
     </div>
 </Sidebar>

@@ -1,18 +1,18 @@
 <script>
  export let segment;
- const navpages = {home:{url:'.'},
-		   about:{},
-		  'sidebar':{url:'sidebar'},
-		  'grid':{url:'grid'},
+ const navpages = {'home (the grid)':{url:'.'},
+ 		  'sidebar':{url:'sidebar'},
 		  'imposter':{url:'imposter'},
 		  'reel':{},
 		  'cover':{},
-		  blog:{
-		      attrs:{rel:'prefetch'}
-		  }};
+		  'stack':{},
+};
 </script>
 
 <style>
+:global(a[target="_blank"], a[target="blank"]) {
+color:red;
+}
 	nav {
 		border-bottom: 1px solid rgba(255,62,0,0.1);
 		font-weight: 300;
