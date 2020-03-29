@@ -4,7 +4,8 @@
 		   about:{},
 		  'sidebar':{url:'sidebar'},
 		  'grid':{url:'grid'},
-		  'imposter':{url:'imposter'},		  		  
+		  'imposter':{url:'imposter'},
+		  'reel':{},
 		  blog:{
 		      attrs:{rel:'prefetch'}
 		  }};
