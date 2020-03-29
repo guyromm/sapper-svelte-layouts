@@ -1,19 +1,17 @@
 <script>
+ import {Switcher,Box} from './layout';
  export let segment;
- const navpages = {'home (the grid)':{url:'.'},
- 		  'sidebar':{url:'sidebar'},
-		  'imposter':{url:'imposter'},
-		  'reel':{},
-		  'cover':{},
-		  'stack':{},
-};
+ const navpages = {'home (the grid)':{url:'.'}};
+ for (const page of ['stack','box','bracket','cluster','sidebar','switcher','cover','frame','reel','imposter'])
+     navpages[page]={};
 </script>
 
 <style>
+
 :global(a[target="_blank"], a[target="blank"]) {
 color:red;
 }
-	nav {
+ nav {
 		border-bottom: 1px solid rgba(255,62,0,0.1);
 		font-weight: 300;
 		padding: 0 1em;
@@ -51,21 +49,23 @@ color:red;
 		bottom: -1px;
 	}
 
-	a {
+/*	a {
 		text-decoration: none;
 		padding: 1em 0.5em;
 		display: block;
-	}
+	}*/
+    a span { color:white; } 
 </style>
 <nav>
-    <ul>
+    <Switcher>
 	{#each Object.entries(navpages) as [label,opts]}
-	    <li><a aria-current={((segment!==undefined && segment===opts.url) ||
+	    <Box><a
+		     aria-current={((segment!==undefined && segment===opts.url) ||
 				segment===label ||
 				(segment===undefined && opts.url==='.'))?"page":undefined}
 		   href={opts.url?opts.url:label}
 		   {...opts.attrs}
-		>{label}</a></li>
+		><span>{label}</span></a></Box>
 	{/each}
-	</ul>
+    </Switcher>
 </nav>

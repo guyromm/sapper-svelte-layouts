@@ -18,7 +18,7 @@ a[target="_blank"], a[target="blank"] {
 color:red;
 }
 </style>
-<h1><a href="https://every-layout.dev/layouts/grid/" target='_blank'>the grid</a></h1>
+<h1><a href="https://every-layout.dev/layouts/grid/" target='_blank'>the grid (you're here now)</a></h1>
 <Grid minWidth='12rem'>
     <Presentation>    
 	<a slot="title" href="stack"><h5>Stack</h5></a>
@@ -38,7 +38,7 @@ color:red;
     </Presentation>
 
     <Presentation>
-	<a slot="title" href="bracket" target="blank"><h5>Bracket</h5></a>
+	<a slot="title" href="bracket"><h5>Bracket</h5></a>
 	<Bracket>
 	    <div slot="left">
 		<Box padding="zero">
@@ -55,7 +55,7 @@ color:red;
     </Presentation>
 
     <Presentation>
-	<a slot="title" href="https://every-layout.dev/layouts/cluster/" target="_blank"><h5>Cluster</h5></a>
+	<a slot="title" href="cluster"><h5>Cluster</h5></a>
 	<Cluster>
 	    <ul style="list-style: none">
 		<li><p>Content</p></li>
@@ -87,7 +87,7 @@ color:red;
     </Presentation>
 
     <Presentation>
-	<a slot="title" href="https://every-layout.dev/layouts/switcher/" target="blank"><h5>Switcher</h5></a>
+	<a slot="title" href="switcher"><h5>Switcher</h5></a>
 	<Switcher minWidth="13rem">
 	    <Box></Box>
 	    <Box></Box>
@@ -96,7 +96,7 @@ color:red;
     </Presentation>
 
     <Presentation>
-	<a slot="title" href="https://every-layout.dev/layouts/cover/" target="blank"><h5>Cover</h5></a>
+	<a slot="title" href="cover"><h5>Cover</h5></a>
 	<Cover minHeight="10vh">
 	    <div slot="above">
 		<Box padding="zero"></Box>
